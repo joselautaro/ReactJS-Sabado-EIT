@@ -3,8 +3,6 @@ import './Style.css'
 
 export const Counter = () => {
 
-    // const array = [1, 2]
-
     // Variable inicializadora, funcion que permite cambiar el estado siempre esta funcion empieza con set
     const [contador, setContador] = useState(0)
 
@@ -17,8 +15,6 @@ export const Counter = () => {
             setContador(contador - 1)
         }
     }
-
-
 
     return (
         <>

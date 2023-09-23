@@ -1,0 +1,11 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: cadetblue;
+    padding: 5px;
+}
+.link{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}

@@ -1,21 +1,30 @@
 import { React } from 'react'
-// import { Counter } from './components/Counter/Counter'
-// import { Login } from './components/Login/Login'
+import { NavBar } from './components/NavBar/NavBar'
+import { Counter } from './components/Counter/Counter'
 import { Form } from './components/Form/Form'
-import './App.css'
+import { Children } from './components/Children/Children'
+import { Principal } from './components/Principal/Principal'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom'
 
 //Functional component --> Componente funcional
 function App() {
 
-  const handleFormSubmit = (value) =>{
-    console.log("Valor enviado desde el hijo", value)
-  }
-
   return (
     <>
-      <Form onSubmit={handleFormSubmit}/>
-      {/* <Counter />
-      <Login /> */}
+      <Router>
+          <NavBar/>
+        <Routes>
+          <Route exact path='/' element={<Principal/>}/>
+          <Route exact path='/contacto' element={<h3>Contacto</h3>}/>
+          <Route exact path='/formulario' element={<Form />}/>
+          <Route exact path='/hijo' element={<Children/>}/>
+          <Route exact path='/contador' element={<Counter/>}/>
+         </Routes>
+      </Router>
     </>
   )
 }
