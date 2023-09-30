@@ -1,0 +1,19 @@
+h2{
+    text-align: center;
+}
+
+button{
+    margin: 5px;
+    padding: 5px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.div-central{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 150px;
+}
+

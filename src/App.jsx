@@ -2,7 +2,7 @@ import { React } from 'react'
 import { NavBar } from './components/NavBar/NavBar'
 import { Counter } from './components/Counter/Counter'
 import { Form } from './components/Form/Form'
-import { Children } from './components/Children/Children'
+import { Poke } from './components/Poke/Poke'
 import { Principal } from './components/Principal/Principal'
 import {
   BrowserRouter as Router,
@@ -21,7 +21,7 @@ function App() {
           <Route exact path='/' element={<Principal/>}/>
           <Route exact path='/contacto' element={<h3>Contacto</h3>}/>
           <Route exact path='/formulario' element={<Form />}/>
-          <Route exact path='/hijo' element={<Children/>}/>
+          <Route exact path='/poke' element={<Poke/>}/>
           <Route exact path='/contador' element={<Counter/>}/>
          </Routes>
       </Router>
