@@ -1,3 +1,12 @@
 .button{
     margin: 5px;
 }
+
+span{
+    text-align: center;
+}
+.btn-counter{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}

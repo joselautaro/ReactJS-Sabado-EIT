@@ -11,7 +11,6 @@ export const NavBar = () =>{
                 <Link className='link' to="/contacto">Contacto</Link>
                 <Link className='link' to="/formulario">Formulario</Link>
                 <Link className='link' to="/poke">Poke</Link>
-                <Link className='link' to="/contador">Contador</Link>
                 <Link className='link' to="/cart"><Cart/></Link>
             </nav>
         </>

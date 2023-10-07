@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { pedirProductos } from '../../helpers/pedirProductos';
+import { Counter } from '../Counter/Counter';
+import './style.css';
 
 
 
@@ -9,11 +11,25 @@ export const Principal = () => {
 
   const [items, setItems] = useState([])
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    setLoading(true)
+  //   setLoading(true)
+  //   pedirProductos()
+  //   fetch('https://fakestoreapi.com/products')
+        // .then(res => res.json())
+  //     .then((res) => {
+  //       setItems(res)
+  //     })
+  //     .catch((error) => {
+  //       console.log("Tiene un error ", error)
+  //     })
+  //     .finally(() => {
+  //       setLoading(false)
+  //     })
+  // },[])
+  useEffect(() => {
     pedirProductos()
-      .then((res) => {
+      .then(res => {
         setItems(res)
       })
       .catch((error) => {
@@ -22,8 +38,8 @@ export const Principal = () => {
       .finally(() => {
         setLoading(false)
       })
-  },[])
 
+  })
 
 
   return (
@@ -33,17 +49,18 @@ export const Principal = () => {
         loading
           ?
           (
-            <p>Cargando...</p>
+            <p className='cargando'>Cargando...</p>
           )
           :
           (
-            <div className='card'>
+            <div className='list-card'>
               {items.map((item) => (
-                <div key={item.id}>
+                <div className='card' key={item.id}>
                   <img src={item.photo} alt={item.photo} />
-                  <p>{item.name}</p>
+                  <h5>{item.name}</h5>
                   <p>{item.description}</p>
                   <p>${item.price}</p>
+                  <Counter />
                 </div>
               ))}
             </div>
@@ -52,26 +69,3 @@ export const Principal = () => {
     </div>
   )
 }
-
-//  <div>
-
-//       {
-//           loading
-//               ?
-//               (
-//                   <p>Cargando...</p>
-//               )
-//               :
-//               (
-//                   <div className='card'>
-//                       {items.map((item) => (
-//                           <h4 key={item.id}>
-//                               <img src={item.photo} alt={item.photo} />
-//                               <p>{item.name}</p>
-//                               <p>{item.description}</p>
-//                           </h4>
-//                       ))}
-//                   </div>
-//               )
-//       }
-//   </div>

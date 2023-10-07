@@ -18,10 +18,12 @@ export const Counter = () => {
 
     return (
         <>
-            <div>Counter</div>
-            <p>{contador}</p>
+            
+            <div className='btn-counter'>
             <button className="button" onClick={handleAdd}>+</button>
-            <button onClick={handleRemove}>-</button>
+            <span>{contador}</span>
+            <button className="button" onClick={handleRemove}>-</button>
+            </div>
         </>
     )
 }
